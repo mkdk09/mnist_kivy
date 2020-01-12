@@ -28,9 +28,12 @@ class MyPaintWidget(Widget):
 
         with self.canvas:
             touch.ud['line'] = Line(points=(touch.x, touch.y), width=self.line_width)
+            # print(touch.ud['line'])
 
     def on_touch_move(self, touch):
+        # 座標を追加していくことでLineクラスが自動的に線を描画してくれる
         touch.ud['line'].points += [touch.x, touch.y]
+        # print(touch.ud['line'].points)
 
     def set_color(self):
         self.canvas.add(Color(*self.color))
@@ -65,7 +68,7 @@ class MyPaintApp(App):
         self.painter.export_to_png('canvas.png')
 
         # image = Image.open('canvas.png').crop((0, 0, 600, 600)).convert('L')
-        image = Image.open('canvas.png').crop((0, 0, 300, 280)).convert('L')
+        image = Image.open('canvas.png').crop((0, 0, 300, 265)).convert('L')
         # image = Image.open('canvas.png').convert('L')
         image.save('./transfer.png')
         image = image.resize((28, 28))

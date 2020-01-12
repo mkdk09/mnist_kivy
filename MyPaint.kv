@@ -2,10 +2,14 @@
 <MyCanvasWidget>:
     paint_id:paint_area
     id: canvas_area
+    canvas:
+        # 境界線を引く
+        Line:
+            points: 0, 70, 300, 70
+            width: 1
     BoxLayout:
         orientation: 'vertical'
         height: root.height
-
         width: root.width
         MyPaintWidget:
             id: paint_area
@@ -15,6 +19,7 @@
             id: result
             size_hint_y: 0.1
             text: app.result
+            font_size: 30
 
         BoxLayout:
             orientation: 'horizontal'
