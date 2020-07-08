@@ -1,6 +1,4 @@
 # mnist_kivy
 
-## TODO
-- [x] 文字のサイズなど変更
-- [x] 結果を表示するところと字を書くところの境界線に線を引く
-- [x] いらないファイルを削除する
+# reference
+https://rightcode.co.jp/blog/information-technology/keras-kivy-simple-number-recognition-application-1
